@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="f88e2fe3-4556-414b-b374-46b74fe2bef9" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/novel_app_v1" beforeDir="false" afterPath="$PROJECT_DIR$/novel_app_v1" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/novel_app_v1/pages/detail/Plugin/Plugin.vue" beforeDir="false" afterPath="$PROJECT_DIR$/novel_app_v1/pages/detail/Plugin/Plugin.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/novel_app_v1/pages/detail/detail.vue" beforeDir="false" afterPath="$PROJECT_DIR$/novel_app_v1/pages/detail/detail.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/novel_app_v1/pages/index/index.vue" beforeDir="false" afterPath="$PROJECT_DIR$/novel_app_v1/pages/index/index.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/novel_app_v1/store.js" beforeDir="false" afterPath="$PROJECT_DIR$/novel_app_v1/store.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/spider_v1" beforeDir="false" afterPath="$PROJECT_DIR$/spider_v1" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/spider_v1/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/spider_v1/pom.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/spider_v1/spider-api-controller/pom.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/spider_v1/spider-api-controller/src/main/java/com/lyr/spider/web/api/SpiderWebStarter.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/spider_v1/spider-common/pom.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/spider_v1/spider-mapper/pom.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/spider_v1/spider-service/pom.xml" beforeDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/spider_v1" />
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="localRepository" value="E:\mvnR\store" />
+        <option name="mavenHome" value="E:\maven\apache-maven-3.6.1" />
+        <option name="userSettingsFile" value="E:\maven\apache-maven-3.6.1\conf\settings.xml" />
+      </MavenGeneralSettings>
+    </option>
+  </component>
+  <component name="ProjectId" id="1t9MPr3VPFUopg0G8DCkZsJhdoh" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+    <option name="showMembers" value="true" />
+    <option name="showVisibilityIcons" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="android.sdk.path" value="$PROJECT_DIR$/../../../../../androidTool/android-sdk-windows" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.detected.package.tslint" value="true" />
+    <property name="node.js.path.for.package.eslint" value="project" />
+    <property name="node.js.path.for.package.tslint" value="project" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="node.js.selected.package.tslint" value="(autodetect)" />
+    <property name="nodejs_package_manager_path" value="npm" />
+    <property name="project.structure.last.edited" value="Project" />
+    <property name="project.structure.proportion" value="0.0" />
+    <property name="project.structure.side.proportion" value="0.0" />
+    <property name="settings.editor.selected.configurable" value="com.alibabacloud.intellij.config.RegionConfigurable" />
+  </component>
+  <component name="RunManager">
+    <configuration default="true" type="Applet" factoryName="Applet">
+      <option name="WIDTH" value="400" />
+      <option name="HEIGHT" value="300" />
+      <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
+      <module />
+      <method />
+    </configuration>
+    <configuration default="true" type="Application" factoryName="Application">
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
+      <option name="arquillianRunConfiguration">
+        <value>
+          <option name="containerStateName" value="" />
+        </value>
+      </option>
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="JUnit" factoryName="JUnit">
+      <option name="TEST_OBJECT" value="class" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="TestNG">
+      <option name="TEST_OBJECT" value="CLASS" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="#org.jetbrains.idea.devkit.run.PluginConfigurationType">
+      <module name="" />
+      <option name="VM_PARAMETERS" value="-Xmx512m -Xms256m -XX:MaxPermSize=250m -ea" />
+      <option name="PROGRAM_PARAMETERS" />
+      <predefined_log_file enabled="true" id="idea.log" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="SshConsoleOptionsProvider">
+    <option name="myEncoding" value="UTF-8" />
+    <option name="myConnectionType" value="NONE" />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="f88e2fe3-4556-414b-b374-46b74fe2bef9" name="Default Changelist" comment="" />
+      <created>1622176832652</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1622176832652</updated>
+      <workItem from="1622176835730" duration="541000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="se.expertsystem.intellij.aop.aspectj.AspectJProjectComponent">
+    <setting name="isActivated" value="false" />
+  </component>
+</project>

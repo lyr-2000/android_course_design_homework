@@ -1,0 +1,130 @@
+{
+
+	"easycom": {
+		"^u-(.*)": "@/uview-ui/components/u-$1/u-$1.vue"
+	},
+
+
+
+	"pages": [ //pages数组中第一项表示应用启动页，参考：https://uniapp.dcloud.io/collocation/pages
+		{
+			"path": "pages/index/index",
+			"style": {
+				"navigationBarTitleText": "我的小说APP"
+			}
+		}, {
+			"path": "pages/detail/detail",
+			"style": {
+				"navigationBarTitleText": "",
+				"enablePullDownRefresh": false,
+				"app-plus": {
+					"titleNView":false
+				}
+			}
+
+		}, {
+			"path": "pages/detail/Plugin/Plugin",
+			"style": {
+				"navigationBarTitleText": "",
+				"enablePullDownRefresh": false,
+				"app-plus":{
+					"titleNView": false
+				}
+			}
+
+		}, {
+			"path": "pages/BookList/BookList",
+			"style": {
+				"navigationBarTitleText": "",
+				"enablePullDownRefresh": false,
+				"app-plus":{
+					"titleNView":false
+				}
+			}
+
+		}, {
+			"path": "pages/FirstPage/SearchPage",
+			"style": {
+				"navigationBarTitleText": "",
+				"enablePullDownRefresh": false,
+
+
+				"app-plus": {
+					"titleNView": false
+				}
+
+			}
+
+		}
+	    ,{
+            "path" : "pages/my/my",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "",
+                "enablePullDownRefresh": false,
+				"app-plus":{
+					"titleNView":false
+				}
+            }
+            
+        }
+        ,{
+            "path" : "pages/FirstPage/Books",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "",
+                "enablePullDownRefresh": false
+            }
+            
+        }
+        ,{
+            "path" : "pages/index/index",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "",
+                "enablePullDownRefresh": false
+            }
+            
+        }
+        ,{
+            "path" : "pages/detail/TitleList",
+            "style" :                                                                                    
+            {
+                // "navigationBarTitleText": "",
+                "enablePullDownRefresh": false,
+				"navigationStyle":"custom",
+				"navigationBarTextStyle": "white" ,
+				"app-plus":{
+					"titleNView":false
+				}
+            }
+            
+        }
+    ],
+	"globalStyle": {
+		"navigationBarTextStyle": "black",
+		"navigationBarTitleText": "宅男小说",
+		"navigationBarBackgroundColor": "#F8F8F8",
+		"backgroundColor": "#F8F8F8"
+	},
+
+	"tabBar": {
+		"color": "#666",
+		"selectedColor": "#18B566",
+		"borderStyle": "black",
+		"list": [{
+			"pagePath": "pages/index/index",
+			"text": "首页"
+
+		}, {
+			"pagePath": "pages/FirstPage/SearchPage",
+			"text": "搜索"
+		}
+		, {
+			"pagePath":"pages/my/my",
+			"text":"我的"
+		}
+		
+		]
+	}
+}

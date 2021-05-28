@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="io.github.lyr2000.novel_app.mapper.IndexPageMapper">
+  <resultMap id="BaseResultMap" type="io.github.lyr2000.novel_app.pojo.po.IndexPage">
+    <id column="index_id" jdbcType="BIGINT" property="indexId" />
+    <result column="download_url" jdbcType="VARCHAR" property="downloadUrl" />
+    <result column="download_title" jdbcType="VARCHAR" property="downloadTitle" />
+    <result column="book_id" jdbcType="BIGINT" property="bookId" />
+    <result column="delete_status" jdbcType="BIT" property="deleteStatus" />
+    <result column="gmt_create" jdbcType="TIMESTAMP" property="gmtCreate" />
+    <result column="gmt_modified" jdbcType="TIMESTAMP" property="gmtModified" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    index_id, download_url, download_title, book_id, delete_status, gmt_create, gmt_modified
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Long" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from t_index_page
+    where index_id = #{indexId,jdbcType=BIGINT}
+  </select>
+  <insert id="insert" parameterType="io.github.lyr2000.novel_app.pojo.po.IndexPage">
+    <selectKey keyProperty="indexId" order="AFTER" resultType="java.lang.Long">
+      SELECT LAST_INSERT_ID()
+    </selectKey>
+    insert into t_index_page (download_url, download_title, book_id, 
+      delete_status, gmt_create, gmt_modified
+      )
+    values (#{downloadUrl,jdbcType=VARCHAR}, #{downloadTitle,jdbcType=VARCHAR}, #{bookId,jdbcType=BIGINT}, 
+      #{deleteStatus,jdbcType=BIT}, #{gmtCreate,jdbcType=TIMESTAMP}, #{gmtModified,jdbcType=TIMESTAMP}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="io.github.lyr2000.novel_app.pojo.po.IndexPage">
+    <selectKey keyProperty="indexId" order="AFTER" resultType="java.lang.Long">
+      SELECT LAST_INSERT_ID()
+    </selectKey>
+    insert into t_index_page
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="downloadUrl != null">
+        download_url,
+      </if>
+      <if test="downloadTitle != null">
+        download_title,
+      </if>
+      <if test="bookId != null">
+        book_id,
+      </if>
+      <if test="deleteStatus != null">
+        delete_status,
+      </if>
+      <if test="gmtCreate != null">
+        gmt_create,
+      </if>
+      <if test="gmtModified != null">
+        gmt_modified,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="downloadUrl != null">
+        #{downloadUrl,jdbcType=VARCHAR},
+      </if>
+      <if test="downloadTitle != null">
+        #{downloadTitle,jdbcType=VARCHAR},
+      </if>
+      <if test="bookId != null">
+        #{bookId,jdbcType=BIGINT},
+      </if>
+      <if test="deleteStatus != null">
+        #{deleteStatus,jdbcType=BIT},
+      </if>
+      <if test="gmtCreate != null">
+        #{gmtCreate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="gmtModified != null">
+        #{gmtModified,jdbcType=TIMESTAMP},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="io.github.lyr2000.novel_app.pojo.po.IndexPage">
+    update t_index_page
+    <set>
+      <if test="downloadUrl != null">
+        download_url = #{downloadUrl,jdbcType=VARCHAR},
+      </if>
+      <if test="downloadTitle != null">
+        download_title = #{downloadTitle,jdbcType=VARCHAR},
+      </if>
+      <if test="bookId != null">
+        book_id = #{bookId,jdbcType=BIGINT},
+      </if>
+      <if test="deleteStatus != null">
+        delete_status = #{deleteStatus,jdbcType=BIT},
+      </if>
+      <if test="gmtCreate != null">
+        gmt_create = #{gmtCreate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="gmtModified != null">
+        gmt_modified = #{gmtModified,jdbcType=TIMESTAMP},
+      </if>
+    </set>
+    where index_id = #{indexId,jdbcType=BIGINT}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="io.github.lyr2000.novel_app.pojo.po.IndexPage">
+    update t_index_page
+    set download_url = #{downloadUrl,jdbcType=VARCHAR},
+      download_title = #{downloadTitle,jdbcType=VARCHAR},
+      book_id = #{bookId,jdbcType=BIGINT},
+      delete_status = #{deleteStatus,jdbcType=BIT},
+      gmt_create = #{gmtCreate,jdbcType=TIMESTAMP},
+      gmt_modified = #{gmtModified,jdbcType=TIMESTAMP}
+    where index_id = #{indexId,jdbcType=BIGINT}
+  </update>
+</mapper>

@@ -1,0 +1,123 @@
+<#import  '../custom/sidebar.html' as sidebar/>
+<#import  '../custom/script.html' as script/>
+
+<@sidebar.SideBar >
+    <link rel="stylesheet" href="/js/jconfirm/jquery-confirm.min.css">
+    <link href="/css/style.min.css" rel="stylesheet">
+    <@script.commonScript />
+    <@script.AlertScript />
+    <#assign  list=types/>
+    <#assign curPage=1 />
+    <#assign size = list?size />
+    <#assign totalCount = size />
+    <#assign totalPage = 1 />
+
+    <section class="row">
+        <div class="col-lg-12">
+            <section class="card">
+
+
+                <div class="card-body">
+
+                    <div class="table-responsive">
+                        <table class="table table-bordered">
+                            <thead>
+                            <tr>
+                                <th>
+                                    <label class="lyear-checkbox checkbox-primary">
+                                        <input type="checkbox" id="check-all"><span></span>
+                                    </label>
+                                </th>
+                                <th>分类ID</th>
+                                <th>分类名字</th>
+                                <th>分类描述</th>
+
+                                <#--                    <th>readCount</th>-->
+                                <#--                    <th>commentCount</th>-->
+                                <#--                    <th>likeCount</th>-->
+                                <th>创建时间</th>
+                                <th>更新时间</th>
+                                <th>操作</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <#list list as entity >
+                                <tr>
+                                    <td>
+                                        <label class="lyear-checkbox checkbox-primary">
+                                            <input type="checkbox" name="ids[]" value="${(entity.topTypeId)!}"><span></span>
+                                        </label>
+                                    </td>
+                                    <td>${ (entity.topTypeId )!}</td>
+                                    <td>${ (entity.showName )!}</td>
+                                    <td>${ (entity.topTypeDescription )!}</td>
+
+                                    <td>${ ( (entity.gmtCreate)?string('yyyy-MM-dd HH') )!}</td>
+                                    <td>${ ((entity.gmtModified)?string('yyyy-MM-dd HH') )!}</td>
+                                    <td>
+                                        <div class="btn-group">
+                                            <a class="btn btn-xs btn-default" href="/backend/editTopType?topTypeId=${entity.topTypeId!}" title="" data-toggle="tooltip" data-original-title="编辑"><i class="mdi mdi-pencil"></i></a>
+                                            <a class="btn btn-xs btn-default" href="/#preview" title="" data-toggle="tooltip" data-original-title="查看"><i class="mdi mdi-eye"></i></a>
+                                            <a class="btn btn-xs btn-default _del" href="#!/delete" title="" data-toggle="tooltip" data-original-title="删除" data-id="${entity.topTypeId !}"><i class="mdi mdi-window-close"></i></a>
+                                        </div>
+                                    </td>
+                                </tr>
+                            </#list>
+
+                            <script>
+                                $('._del').on('click',function () {
+                                    //要删除元素 的 ID
+                                    let id = $(this).data('id');
+                                    $.alert({
+                                        title: '删除分类',
+                                        content: `是否删除`,
+                                        buttons: {
+                                            confirm: {
+                                                text: '确认',
+                                                btnClass: 'btn-primary',
+                                                action: function(){
+                                                    // $.alert('你点击了确认!');
+                                                    _jumpPage('/backend/top_types_delete?topTypeId='+ id )
+                                                }
+                                            },
+                                            cancel: {
+                                                text: '取消',
+                                                action: function () {
+                                                    // $.alert('取消删除');
+                                                }
+                                            }
+                                        }
+                                    });
+                                })
+                            </script>
+
+                            </tbody>
+                        </table>
+
+                    </div>
+                    <ul class="pagination">
+
+                        <li class="active"><a>1</a></li>
+
+                    </ul>
+                    <script>
+                        $(document).ready(function() {
+                            _renderPagination(${curPage},${totalPage});
+                        })
+
+                    </script>
+
+
+                </div>
+
+            </section>
+
+        </div>
+
+
+
+    </section>
+
+
+
+</@sidebar.SideBar>

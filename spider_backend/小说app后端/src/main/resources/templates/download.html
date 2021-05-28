@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0, maximum-scale=1.0,minimum-scale=1.0,user-scalable=0"/>
+    <title>小说搜索页面</title>
+    <link href="/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/css/materialdesignicons.min.css" rel="stylesheet">
+    <link href="/css/style.min.css" rel="stylesheet">
+
+
+</head>
+<body>
+
+
+<div>
+    <div class="row">
+        <div class="col-md-12">
+
+
+            <div class="form-group" style="padding: 31px">
+                <form class="lyear-search lyear-search-left" method="GET" action="/search_novel">
+                    <div class="input-group">
+                        <input type="text" name="keyword" class="form-control" placeholder="请输入搜索的关键词...">
+                        <div class="input-group-btn">
+                            <button type="submit" class="btn btn-default">搜索</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <#if list??>
+<#--            <div class="col-md-12">-->
+<#--                <div class="card p13px">-->
+                    <div class="lyear-list clearfix">
+                        <#--                   <div class="list-item">-->
+                        <#--                       <a class="cover" href="book.html"><img src="images/book/1.jpg" alt="天龙八部"></a>-->
+                        <#--                       <div class="list-entry">-->
+                        <#--                           <h4>《<a href="book.html">天龙八部</a>》<small><a href="column.html">话本小说</a> · <a href="dynasty.html">近现代</a> · <a href="author.html">金庸</a></small></h4>-->
+                        <#--                           <p class="text-muted">小说以宋哲宗时代为背景，通过宋、辽、大理、西夏、吐蕃等王国之间的武林恩怨和民族矛盾，从哲学的高度对人生和社会进行审视和描写，展示了一幅波澜壮阔的生活画卷，其故事之离奇曲折、涉及人物之众多、历史背景之广泛、武侠战役之庞大、想象力之丰富当属“金书”之最。</p>-->
+                        <#--                       </div>-->
+                        <#--                   </div>-->
+
+
+                        <#list  list as book>
+                            <div class="list-item">
+                                <a class="cover" href="novel_title_list?downloadUrl=${book.bookUrl}"><img src="${book.imgUrl !}"
+                                                                       alt="${book.bookName?html}"></a>
+                                <div class="list-entry">
+                                    <h4>《<a href="novel_title_list?downloadUrl=${book.bookUrl}">${book.bookName !?html}</a>》<small><a
+                                                    href="author.html">${book.author !?html}</a></small></h4>
+                                    <p class="text-muted">${book.bookIntroduction!?html}</p>
+                                </div>
+                            </div>
+                        </#list>
+
+
+                    </div>
+<#--                </div>-->
+        <#--            </div>-->
+        </#if>
+    </div>
+</div>
+
+
+</body>
+</html>

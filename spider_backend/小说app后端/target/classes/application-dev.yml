@@ -1,0 +1,51 @@
+spring:
+  devtools:
+    restart:
+      enabled: true
+  datasource:
+    url: jdbc:mysql://1.15.108.110:3309/spider_app?useUnicode=true&characterEncoding=UTF-8&useSSL=false
+    driver-class-name: com.mysql.jdbc.Driver
+    username: Spider_APP
+    password: KGiZ55W6KiZhJbrY
+
+  servlet:
+    multipart:
+      max-file-size: 4MB
+  freemarker:
+    charset: UTF-8
+    suffix: .html
+    request-context-attribute: ctx
+  mvc:
+    throw-exception-if-no-handler-found: true
+  #  redis:
+  #    port: 8879
+  #    password: lyrlyr422525!!
+  #    host: 47.113.95.1
+
+  application:
+    name: spider_novel_app #应用名称，可以任意取
+
+
+debug: false
+server:
+  port: 80
+
+
+mybatis:
+  mapper-locations: classpath:/mapper/**.xml,classpath*:mapper/custom/*.xml
+  type-aliases-package: io.github.lyr2000.novel_app.pojo.po
+  configuration:
+    map-underscore-to-camel-case: true
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl #打印sql
+
+
+pagehelper:                #分页插件
+  helper-dialect: mysql
+  reasonable: true # 如果 page <=0, 会帮你改为 page = 1 查询
+  support-methods-arguments: true
+
+
+logging:  #日志级别
+  level:
+    root: info
+    io.github.lyr2000: info

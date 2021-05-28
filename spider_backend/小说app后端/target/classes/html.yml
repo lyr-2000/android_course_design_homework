@@ -1,0 +1,28 @@
+#className: hello world
+#className,fieldName
+#foreach
+form:
+
+  attr:
+    class: row
+    id: ${className}
+    method: post
+    action: /api/${className}
+  $forEach:
+    div:
+      attr:
+        class: form-group col-md-12
+      label:
+        attr:
+          for: ${fieldName}
+        content: ${fieldName}
+      input:
+        attr:
+          type: text
+          class: form-control
+          id: ${fieldName}
+          name: ${fieldName}
+          placeholder: ${fieldName}
+
+
+

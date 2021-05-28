@@ -1,0 +1,9 @@
+spring:
+  freemarker:
+    suffix: .html
+  profiles:
+    active: dev
+server:
+  port: 80
+
+

@@ -1,0 +1,192 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="io.github.lyr2000.novel_app.mapper.BookInfoMapper">
+  <resultMap id="BaseResultMap" type="io.github.lyr2000.novel_app.pojo.po.BookInfo">
+    <id column="book_id" jdbcType="BIGINT" property="bookId" />
+    <result column="website_id" jdbcType="BIGINT" property="websiteId" />
+    <result column="book_name" jdbcType="VARCHAR" property="bookName" />
+    <result column="from_website_id" jdbcType="BIGINT" property="fromWebsiteId" />
+    <result column="delete_status" jdbcType="BIT" property="deleteStatus" />
+    <result column="author" jdbcType="VARCHAR" property="author" />
+    <result column="book_url" jdbcType="VARCHAR" property="bookUrl" />
+    <result column="gmt_create" jdbcType="TIMESTAMP" property="gmtCreate" />
+    <result column="gmt_modified" jdbcType="TIMESTAMP" property="gmtModified" />
+    <result column="img_url" jdbcType="VARCHAR" property="imgUrl" />
+    <result column="already_finished" jdbcType="BIT" property="alreadyFinished" />
+  </resultMap>
+  <resultMap extends="BaseResultMap" id="ResultMapWithBLOBs" type="io.github.lyr2000.novel_app.pojo.po.BookInfo">
+    <result column="book_introduction" jdbcType="LONGVARCHAR" property="bookIntroduction" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    book_id, website_id, book_name, from_website_id, delete_status, author, book_url, 
+    gmt_create, gmt_modified, img_url, already_finished
+  </sql>
+  <sql id="Blob_Column_List">
+    book_introduction
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Long" resultMap="ResultMapWithBLOBs">
+    select 
+    <include refid="Base_Column_List" />
+    ,
+    <include refid="Blob_Column_List" />
+    from t_book_info
+    where book_id = #{bookId,jdbcType=BIGINT}
+  </select>
+  <insert id="insert" parameterType="io.github.lyr2000.novel_app.pojo.po.BookInfo">
+    <selectKey keyProperty="bookId" order="AFTER" resultType="java.lang.Long">
+      SELECT LAST_INSERT_ID()
+    </selectKey>
+    insert into t_book_info (website_id, book_name, from_website_id, 
+      delete_status, author, book_url, 
+      gmt_create, gmt_modified, img_url, 
+      already_finished, book_introduction)
+    values (#{websiteId,jdbcType=BIGINT}, #{bookName,jdbcType=VARCHAR}, #{fromWebsiteId,jdbcType=BIGINT}, 
+      #{deleteStatus,jdbcType=BIT}, #{author,jdbcType=VARCHAR}, #{bookUrl,jdbcType=VARCHAR}, 
+      #{gmtCreate,jdbcType=TIMESTAMP}, #{gmtModified,jdbcType=TIMESTAMP}, #{imgUrl,jdbcType=VARCHAR}, 
+      #{alreadyFinished,jdbcType=BIT}, #{bookIntroduction,jdbcType=LONGVARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="io.github.lyr2000.novel_app.pojo.po.BookInfo">
+    <selectKey keyProperty="bookId" order="AFTER" resultType="java.lang.Long">
+      SELECT LAST_INSERT_ID()
+    </selectKey>
+    insert into t_book_info
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="websiteId != null">
+        website_id,
+      </if>
+      <if test="bookName != null">
+        book_name,
+      </if>
+      <if test="fromWebsiteId != null">
+        from_website_id,
+      </if>
+      <if test="deleteStatus != null">
+        delete_status,
+      </if>
+      <if test="author != null">
+        author,
+      </if>
+      <if test="bookUrl != null">
+        book_url,
+      </if>
+      <if test="gmtCreate != null">
+        gmt_create,
+      </if>
+      <if test="gmtModified != null">
+        gmt_modified,
+      </if>
+      <if test="imgUrl != null">
+        img_url,
+      </if>
+      <if test="alreadyFinished != null">
+        already_finished,
+      </if>
+      <if test="bookIntroduction != null">
+        book_introduction,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="websiteId != null">
+        #{websiteId,jdbcType=BIGINT},
+      </if>
+      <if test="bookName != null">
+        #{bookName,jdbcType=VARCHAR},
+      </if>
+      <if test="fromWebsiteId != null">
+        #{fromWebsiteId,jdbcType=BIGINT},
+      </if>
+      <if test="deleteStatus != null">
+        #{deleteStatus,jdbcType=BIT},
+      </if>
+      <if test="author != null">
+        #{author,jdbcType=VARCHAR},
+      </if>
+      <if test="bookUrl != null">
+        #{bookUrl,jdbcType=VARCHAR},
+      </if>
+      <if test="gmtCreate != null">
+        #{gmtCreate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="gmtModified != null">
+        #{gmtModified,jdbcType=TIMESTAMP},
+      </if>
+      <if test="imgUrl != null">
+        #{imgUrl,jdbcType=VARCHAR},
+      </if>
+      <if test="alreadyFinished != null">
+        #{alreadyFinished,jdbcType=BIT},
+      </if>
+      <if test="bookIntroduction != null">
+        #{bookIntroduction,jdbcType=LONGVARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="io.github.lyr2000.novel_app.pojo.po.BookInfo">
+    update t_book_info
+    <set>
+      <if test="websiteId != null">
+        website_id = #{websiteId,jdbcType=BIGINT},
+      </if>
+      <if test="bookName != null">
+        book_name = #{bookName,jdbcType=VARCHAR},
+      </if>
+      <if test="fromWebsiteId != null">
+        from_website_id = #{fromWebsiteId,jdbcType=BIGINT},
+      </if>
+      <if test="deleteStatus != null">
+        delete_status = #{deleteStatus,jdbcType=BIT},
+      </if>
+      <if test="author != null">
+        author = #{author,jdbcType=VARCHAR},
+      </if>
+      <if test="bookUrl != null">
+        book_url = #{bookUrl,jdbcType=VARCHAR},
+      </if>
+      <if test="gmtCreate != null">
+        gmt_create = #{gmtCreate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="gmtModified != null">
+        gmt_modified = #{gmtModified,jdbcType=TIMESTAMP},
+      </if>
+      <if test="imgUrl != null">
+        img_url = #{imgUrl,jdbcType=VARCHAR},
+      </if>
+      <if test="alreadyFinished != null">
+        already_finished = #{alreadyFinished,jdbcType=BIT},
+      </if>
+      <if test="bookIntroduction != null">
+        book_introduction = #{bookIntroduction,jdbcType=LONGVARCHAR},
+      </if>
+    </set>
+    where book_id = #{bookId,jdbcType=BIGINT}
+  </update>
+  <update id="updateByPrimaryKeyWithBLOBs" parameterType="io.github.lyr2000.novel_app.pojo.po.BookInfo">
+    update t_book_info
+    set website_id = #{websiteId,jdbcType=BIGINT},
+      book_name = #{bookName,jdbcType=VARCHAR},
+      from_website_id = #{fromWebsiteId,jdbcType=BIGINT},
+      delete_status = #{deleteStatus,jdbcType=BIT},
+      author = #{author,jdbcType=VARCHAR},
+      book_url = #{bookUrl,jdbcType=VARCHAR},
+      gmt_create = #{gmtCreate,jdbcType=TIMESTAMP},
+      gmt_modified = #{gmtModified,jdbcType=TIMESTAMP},
+      img_url = #{imgUrl,jdbcType=VARCHAR},
+      already_finished = #{alreadyFinished,jdbcType=BIT},
+      book_introduction = #{bookIntroduction,jdbcType=LONGVARCHAR}
+    where book_id = #{bookId,jdbcType=BIGINT}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="io.github.lyr2000.novel_app.pojo.po.BookInfo">
+    update t_book_info
+    set website_id = #{websiteId,jdbcType=BIGINT},
+      book_name = #{bookName,jdbcType=VARCHAR},
+      from_website_id = #{fromWebsiteId,jdbcType=BIGINT},
+      delete_status = #{deleteStatus,jdbcType=BIT},
+      author = #{author,jdbcType=VARCHAR},
+      book_url = #{bookUrl,jdbcType=VARCHAR},
+      gmt_create = #{gmtCreate,jdbcType=TIMESTAMP},
+      gmt_modified = #{gmtModified,jdbcType=TIMESTAMP},
+      img_url = #{imgUrl,jdbcType=VARCHAR},
+      already_finished = #{alreadyFinished,jdbcType=BIT}
+    where book_id = #{bookId,jdbcType=BIGINT}
+  </update>
+</mapper>
